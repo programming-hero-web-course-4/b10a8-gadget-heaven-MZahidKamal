@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 2,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 3,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 4,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 5,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 6,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 7,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 8,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 9,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  },
+  {
+    "id": 10,
+    "title": "Samsung Galaxy S21 Ultra",
+    "imageUrl": "https://i.ibb.co/nk3CX0Q/Samsung-Galaxy-S21-Ultra.png",
+    "category": "Smartphone",
+    "price": 589,
+    "description": "Samsung Galaxy S21 Ultra offers premium features with an exceptional camera and display.",
+    "specification": [
+      "6.8-inch Dynamic AMOLED display",
+      "108MP primary camera",
+      "5000mAh battery",
+      "12GB RAM",
+      "5G connectivity"
+    ],
+    "availability": true,
+    "rating": 4.8,
+    "brand": "Samsung",
+    "warranty": "1 year manufacturer warranty",
+    "releaseDate": "2023-01-15"
+  }
+]
