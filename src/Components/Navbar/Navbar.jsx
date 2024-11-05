@@ -10,7 +10,8 @@ import WishlistContextAPI from "../../Routes/ContextAPI/WishlistContextAPI.jsx";
 const nav_links = [
     {path: "/", name: "Home"},
     {path: "/statistics", name: "Statistics"},
-    {path: "/dashboard", name: "Dashboard"},
+    {path: "/dashboard/cart", name: "Dashboard"},
+    {path: "/about_us", name: "About Us"},
 ]
 
 

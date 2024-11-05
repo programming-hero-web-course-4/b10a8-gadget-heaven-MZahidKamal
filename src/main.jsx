@@ -10,6 +10,7 @@ import Dashboard from "./Components/Dashboard/Dashboard.jsx";
 import Cart from "./Components/Dashboard/Cart/Cart.jsx";
 import Wishlist from "./Components/Dashboard/Wishlist/Wishlist.jsx";
 import Details from "./Components/Home/Gadgets/Gadget/Details/Details.jsx";
+import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
                         element: <Wishlist></Wishlist>,
                     }
                 ]
+            },
+            {
+                path: "/about_us",
+                element: <AboutUs></AboutUs>,
             }
         ],
     },
