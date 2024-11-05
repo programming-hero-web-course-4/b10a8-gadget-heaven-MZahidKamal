@@ -8,7 +8,7 @@ const CartCard = ({gadget}) => {
 
 
     const {
-        id,
+        // id,
         title,
         imageUrl,
         // category,

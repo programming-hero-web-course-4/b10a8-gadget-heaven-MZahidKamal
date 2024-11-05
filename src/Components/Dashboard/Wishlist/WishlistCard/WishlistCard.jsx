@@ -8,7 +8,7 @@ const WishlistCard = ({gadget}) => {
 
 
     const {
-        id,
+        // id,
         title,
         imageUrl,
         // category,

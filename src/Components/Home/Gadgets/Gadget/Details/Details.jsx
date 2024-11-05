@@ -29,13 +29,17 @@ const Details = () => {
 
     const [cart, setCart] = useContext(CartContextAPI)
     const handleAddToCart = () => {
-        setCart([...cart, gadget]);
+        if(!cart.includes(gadget)){
+            setCart([...cart, gadget]);
+        }
     }
 
 
     const [wishlist, setWishlist] = useContext(WishlistContextAPI)
     const handleAddToWishlist = () => {
-        setWishlist([...wishlist, gadget]);
+        if(!wishlist.includes(gadget)){
+            setWishlist([...wishlist, gadget]);
+        }
     }
 
 
