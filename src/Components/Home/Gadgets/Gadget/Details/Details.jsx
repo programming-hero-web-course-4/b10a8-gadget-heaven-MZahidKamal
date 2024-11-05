@@ -2,9 +2,11 @@ import PropType from "prop-types";
 import {BsCart3} from "react-icons/bs";
 import {IoMdHeartEmpty} from "react-icons/io";
 import {useLoaderData} from "react-router-dom";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import CartContextAPI from "../../../../../Routes/ContextAPI/CartContextAPI.jsx";
 import WishlistContextAPI from "../../../../../Routes/ContextAPI/WishlistContextAPI.jsx";
+import {toast} from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Details = () => {
@@ -28,17 +30,60 @@ const Details = () => {
 
 
     const [cart, setCart] = useContext(CartContextAPI)
+    const [wishlist, setWishlist] = useContext(WishlistContextAPI)
+
+
+    const [disableAddToCartButton, setDisableAddToCartButton] = useState(false);
+    const [disableAddToWishlistButton, setDisableAddToWishlistButton] = useState(false);
+
+
+    useEffect(() => {
+        if(cart.includes(gadget)){
+            setDisableAddToCartButton(true);
+        }
+    }, [gadget, cart, wishlist]);
+
+
+    useEffect(() => {
+        if(wishlist.includes(gadget)){
+            setDisableAddToWishlistButton(true);
+        }
+    }, [gadget, cart, wishlist]);
+
+
     const handleAddToCart = () => {
-        if(!cart.includes(gadget)){
+        if (cart.includes(gadget)) {
+            toast.info(`${title} is already in your cart!`);
+        }
+        else if (wishlist.includes(gadget)) {
+            let newWishlist = wishlist.filter((item) => item !== gadget);
+            setWishlist(newWishlist);
+            setDisableAddToWishlistButton(false);
             setCart([...cart, gadget]);
+            toast.success(`${title} is moved to cart successfully!`);
+        }
+        else {
+            setCart([...cart, gadget]);
+            toast.success(`${title} added to cart successfully!`);
         }
     }
 
 
-    const [wishlist, setWishlist] = useContext(WishlistContextAPI)
     const handleAddToWishlist = () => {
-        if(!wishlist.includes(gadget)){
+
+        if (cart.includes(gadget)) {
+            let newCart = cart.filter((item) => item !== gadget);
+            setCart(newCart);
+            setDisableAddToCartButton(false);
             setWishlist([...wishlist, gadget]);
+            toast.success(`${title} is moved to wishlist successfully!`);
+        }
+        else if (wishlist.includes(gadget)) {
+            toast.info(`${title} is already in your wishlist!`);
+        }
+        else {
+            setWishlist([...wishlist, gadget]);
+            toast.success(`${title} added to wishlist successfully!`);
         }
     }
 
@@ -78,13 +123,15 @@ const Details = () => {
                         <div className={'flex justify-center items-center gap-x-4'}>
                             <button
                                 onClick={()=>handleAddToCart()}
-                                className={'flex justify-center items-center gap-x-2 bg-purple-500 px-6 py-2 rounded-full active:scale-95 transition transform duration-100'}>
+                                disabled={disableAddToCartButton}
+                                className={`flex justify-center items-center gap-x-2 bg-purple-500 px-6 py-2 rounded-full ${disableAddToCartButton? 'cursor-not-allowed' : 'active:scale-95 transition transform duration-100'}`}>
                                 <h3 className={'text-lg text-white font-semibold'}>Add To Cart</h3>
                                 <BsCart3 className={'text-2xl text-white'}/>
                             </button>
                             <button
                                   onClick={()=>handleAddToWishlist()}
-                                  className="text-3xl w-12 h-12 border-2 bg-white rounded-full flex justify-center items-center active:scale-95 transition transform duration-100">
+                                  disabled={disableAddToWishlistButton}
+                                  className={`text-3xl w-12 h-12 border-2 bg-white rounded-full flex justify-center items-center ${disableAddToWishlistButton? 'cursor-not-allowed' : 'active:scale-95 transition transform duration-100'}`}>
                                 <IoMdHeartEmpty/>
                             </button>
                         </div>

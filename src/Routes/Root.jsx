@@ -5,6 +5,8 @@ import GadgetsContextAPI from "./ContextAPI/GadgetsContextAPI.jsx";
 import {useState} from "react";
 import CartContextAPI from "./ContextAPI/CartContextAPI.jsx";
 import WishlistContextAPI from "./ContextAPI/WishlistContextAPI.jsx";
+import {ToastContainer} from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Root = () => {
@@ -24,6 +26,18 @@ const Root = () => {
                         <Navbar></Navbar>
                         <Outlet/>
                         <Footer></Footer>
+
+                        <ToastContainer
+                            position="top-center"
+                            autoClose={2000}
+                            hideProgressBar={false}
+                            newestOnTop={true}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                        ></ToastContainer>
 
                     </CartContextAPI.Provider>
                 </WishlistContextAPI.Provider>

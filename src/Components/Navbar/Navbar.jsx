@@ -80,17 +80,6 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                {/*<div className="right-buttons flex gap-x-5">
-                    <NavLink to={'/dashboard/cart'} className="text-2xl w-12 h-12 bg-white rounded-full flex justify-center items-center active:scale-95 transition transform duration-100">
-                        <BsCart3/>
-                    </NavLink>
-                    <NavLink to={'/dashboard/wishlist'}
-                             className="text-3xl w-12 h-12 bg-white rounded-full flex justify-center items-center active:scale-95 transition transform duration-100">
-                        <IoMdHeartEmpty/>
-                    </NavLink>
-                </div>*/}
-
-
                 <div className="right-buttons flex gap-x-5 relative">
                     <NavLink to={'/dashboard/cart'}
                              className="text-2xl w-12 h-12 bg-white rounded-full flex justify-center items-center active:scale-95 transition transform duration-100 relative">
