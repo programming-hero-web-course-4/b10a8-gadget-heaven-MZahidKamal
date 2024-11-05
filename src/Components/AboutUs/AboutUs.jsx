@@ -21,7 +21,7 @@ const AboutUs = () => {
                             <p className="text-gray-700 text-justify leading-relaxed">Established in Berlin, our company has grown from a small team of tech lovers to a leading online store for electronics. We believe in providing top-notch products, competitive prices, and exceptional customer service. Join us as we explore the world of innovation and cutting-edge technology!</p>
                         </div>
                         <div className="lg:w-1/2 flex justify-center items-center">
-                            <img src="/public/assets/images/About_Us_01.png" alt="Electronics gadgets overview" className="w-10/12 rounded-lg shadow-lg"/>
+                            <img src="/assets/images/About_Us_01.png" alt="Electronics gadgets overview" className="w-10/12 rounded-lg shadow-lg"/>
                         </div>
                     </section>
 
@@ -32,7 +32,7 @@ const AboutUs = () => {
                             <p className="text-gray-700 text-justify leading-relaxed">Customer satisfaction is at the heart of everything we do. From our responsive customer service to our easy returns policy, we strive to make shopping with us as convenient as possible. Thank you for choosing us as your trusted electronics partner!</p>
                         </div>
                         <div className="lg:w-1/2 flex justify-center items-center">
-                            <img src="/public/assets/images/About_Us_02.png" alt="Customer support team" className="w-10/12 rounded-lg shadow-lg"/>
+                            <img src="/assets/images/About_Us_02.png" alt="Customer support team" className="w-10/12 rounded-lg shadow-lg"/>
                         </div>
                     </section>
                 </div>

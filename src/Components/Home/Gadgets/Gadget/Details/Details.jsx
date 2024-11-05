@@ -29,8 +29,8 @@ const Details = () => {
     } = gadget;
 
 
-    const [cart, setCart] = useContext(CartContextAPI)
-    const [wishlist, setWishlist] = useContext(WishlistContextAPI)
+    const [cart, setCart] = useContext(CartContextAPI);
+    const [wishlist, setWishlist] = useContext(WishlistContextAPI);
 
 
     const [disableAddToCartButton, setDisableAddToCartButton] = useState(false);
@@ -108,7 +108,7 @@ const Details = () => {
                     <div className={'col-span-8 rounded-xl flex flex-col justify-between items-start'}>
                         <h1 className={'text-3xl font-semibold'}>{title}</h1>
                         <h3 className={'text-xl font-semibold'}>Price: {price} €</h3>
-                        <button className={`border ${availability? 'border-green-500 bg-green-500/30':'border-red-500 bg-red-500/30'} rounded-full px-4 py-1`}>{availability? 'In Stock':'Out of Stock'}</button>
+                        <div className={`border ${availability? 'border-green-500 bg-green-500/30':'border-red-500 bg-red-500/30'} rounded-full px-4 py-1`}>{availability? 'In Stock':'Out of Stock'}</div>
                         <p className={'text-base text-gray-500'}>{description}</p>
                         <h3 className={'text-xl font-semibold'}>Specification:</h3>
                         <ol className={'list-decimal ml-5 text-base text-gray-500'}>

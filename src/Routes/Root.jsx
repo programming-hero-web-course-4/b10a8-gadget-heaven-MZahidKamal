@@ -28,7 +28,7 @@ const Root = () => {
                         <Footer></Footer>
 
                         <ToastContainer
-                            position="top-center"
+                            position="bottom-center"
                             autoClose={2000}
                             hideProgressBar={false}
                             newestOnTop={true}
