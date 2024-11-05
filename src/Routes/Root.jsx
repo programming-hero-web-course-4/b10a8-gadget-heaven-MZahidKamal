@@ -1,7 +1,10 @@
 import Navbar from "../Components/Navbar/Navbar.jsx";
 import Footer from "../Components/Footer/Footer.jsx";
 import {Outlet, useLoaderData} from "react-router-dom";
-import ContextAPI from "./ContextAPI/ContextAPI.jsx";
+import GadgetsContextAPI from "./ContextAPI/GadgetsContextAPI.jsx";
+import {useState} from "react";
+import CartContextAPI from "./ContextAPI/CartContextAPI.jsx";
+import WishlistContextAPI from "./ContextAPI/WishlistContextAPI.jsx";
 
 
 const Root = () => {
@@ -9,13 +12,22 @@ const Root = () => {
     const gadgets = useLoaderData();
     // console.log(gadgets);
 
+    const [cart, setCart] = useState([]);
+    const [wishlist, setWishlist] = useState([]);
+
     return (
         <>
-            <ContextAPI.Provider value={gadgets}>
-                <Navbar></Navbar>
-                <Outlet/>
-                <Footer></Footer>
-            </ContextAPI.Provider>
+            <GadgetsContextAPI.Provider value={gadgets}>
+                <WishlistContextAPI.Provider value={[wishlist, setWishlist]}>
+                    <CartContextAPI.Provider value={[cart, setCart]}>
+
+                        <Navbar></Navbar>
+                        <Outlet/>
+                        <Footer></Footer>
+
+                    </CartContextAPI.Provider>
+                </WishlistContextAPI.Provider>
+            </GadgetsContextAPI.Provider>
         </>
     );
 };

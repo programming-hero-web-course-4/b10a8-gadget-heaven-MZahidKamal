@@ -1,4 +1,4 @@
-import WishlistCard from "../Dashboard/Wishlist/WishlistCard/WishlistCard.jsx";
+// import WishlistCard from "../Dashboard/Wishlist/WishlistCard/WishlistCard.jsx";
 
 
 const Statistics = () => {
@@ -16,7 +16,7 @@ const Statistics = () => {
                 <div className={'flex justify-between items-center h-24'}>
                     <h1 className={'text-3xl font-bold'}>Statistics</h1>
                 </div>
-                <WishlistCard></WishlistCard>
+                {/*<WishlistCard></WishlistCard>*/}
             </div>
         </div>
     );

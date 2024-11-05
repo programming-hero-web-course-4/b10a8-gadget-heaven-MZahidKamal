@@ -1,13 +1,16 @@
 import {Link} from "react-router-dom";
 import CartCard from "./CartCard/CartCard.jsx";
 import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
+import {useContext} from "react";
+import CartContextAPI from "../../../Routes/ContextAPI/CartContextAPI.jsx";
 
 
 const Cart = () => {
+
+    const [cart] = useContext(CartContextAPI);
+
     return (
         <div className={'container mx-auto px-10'}>
-
-
             <div className={'flex justify-between items-center h-24'}>
                 <h1 className={'text-3xl font-bold'}>Cart</h1>
                 <div className={'flex justify-end items-center gap-x-2'}>
@@ -26,25 +29,11 @@ const Cart = () => {
                     </Link>
                 </div>
             </div>
-
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-            <CartCard></CartCard>
-
-
+            {
+                cart.map((gadget, index) => {
+                    return <CartCard key={index} gadget={gadget}></CartCard>
+                })
+            }
         </div>
     );
 };

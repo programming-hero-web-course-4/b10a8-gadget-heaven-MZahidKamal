@@ -2,13 +2,13 @@ import Gadget from "./Gadget/Gadget.jsx";
 // import {useLoaderData} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {getAllCategories, getFilteredGadgets} from "../../../SharedUtilities/SharedUtilities.jsx";
-import ContextAPI from "../../../Routes/ContextAPI/ContextAPI.jsx";
+import GadgetsContextAPI from "../../../Routes/ContextAPI/GadgetsContextAPI.jsx";
 
 
 const Gadgets = () => {
 
 
-    let gadgets = useContext(ContextAPI);
+    let gadgets = useContext(GadgetsContextAPI);
     // const gadgets = useLoaderData();
     // console.log(gadgets);
 
