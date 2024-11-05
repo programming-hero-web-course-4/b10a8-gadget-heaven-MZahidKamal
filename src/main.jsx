@@ -25,6 +25,7 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Home></Home>,
                 loader: () => fetch('/assets/fake_data.json'),
+                // loader: () => fetch('https://raw.githubusercontent.com/MZahidKamal/Electronics-Gadgets/refs/heads/main/electronics-gadgets.json'),
             },
             {
                 path: "/:category/:brand/:title/product_details",
