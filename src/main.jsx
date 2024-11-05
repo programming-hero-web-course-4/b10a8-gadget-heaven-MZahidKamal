@@ -1,9 +1,6 @@
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import './index.css'
 import Root from './Routes/Root.jsx'
 import Error404 from "./Components/Error404/Error404.jsx";
@@ -19,16 +16,29 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        loader: async () => {
+            const response = await fetch('https://raw.githubusercontent.com/MZahidKamal/Electronics-Gadgets/refs/heads/main/electronics-gadgets.json');
+            return await response.json();
+        },
         errorElement: <Error404></Error404>,
         children: [
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('/assets/fake_data.json'),
-                // loader: () => fetch('https://raw.githubusercontent.com/MZahidKamal/Electronics-Gadgets/refs/heads/main/electronics-gadgets.json'),
+                // loader: () => fetch('/assets/fake_data.json'),
+                /*loader: async () => {
+                    const response = await fetch('https://raw.githubusercontent.com/MZahidKamal/Electronics-Gadgets/refs/heads/main/electronics-gadgets.json');
+                    return await response.json();
+                }*/
             },
             {
-                path: "/:category/:brand/:title/product_details",
+                path: "/:category/:brand/:title/:id/product_details",
+                loader: async ({params}) => {
+                    // console.log(params);
+                    const response = await fetch(`https://raw.githubusercontent.com/MZahidKamal/Electronics-Gadgets/refs/heads/main/electronics-gadgets.json`);
+                    const data = await response.json();
+                    return data.find((item) => item.id === Number(params.id));
+                },
                 element: <Details></Details>,
             },
             {

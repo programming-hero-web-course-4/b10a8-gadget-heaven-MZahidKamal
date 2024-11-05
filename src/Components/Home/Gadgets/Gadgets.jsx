@@ -1,13 +1,16 @@
 import Gadget from "./Gadget/Gadget.jsx";
-import {useLoaderData} from "react-router-dom";
-import {useEffect, useState} from "react";
+// import {useLoaderData} from "react-router-dom";
+import {useContext, useEffect, useState} from "react";
 import {getAllCategories, getFilteredGadgets} from "../../../SharedUtilities/SharedUtilities.jsx";
+import ContextAPI from "../../../Routes/ContextAPI/ContextAPI.jsx";
 
 
 const Gadgets = () => {
 
 
-    const gadgets = useLoaderData();
+    let gadgets = useContext(ContextAPI);
+    // const gadgets = useLoaderData();
+    // console.log(gadgets);
 
 
     const [categories, setCategories] = useState([]);
@@ -43,10 +46,10 @@ const Gadgets = () => {
                 <h1 className={'text-4xl font-bold text-center mb-14'}>Explore Cutting-Edge Gadgets</h1>
                 <div className={'grid grid-cols-12 gap-5'}>
                     <div className={'bg-white rounded-2xl col-span-2 flex flex-col items-center py-5 gap-y-4 max-h-fit'}>
-                        <button onClick={()=>handleFilter('')} className={`rounded-full ${activeCategory === '' ? `bg-[#9538e2]` : `bg-[#f7f7f7]`} text-lg text-white font-bold w-52 py-3 active:scale-95 transition transform duration-100`}>All Products</button>
+                        <button onClick={()=>handleFilter('')} className={`rounded-full ${activeCategory === '' ? `bg-[#9538e2] text-white` : `bg-[#f7f7f7] text-gray-500`} text-lg font-bold w-52 py-3 active:scale-95 transition transform duration-100`}>All Products</button>
                         {
                             categories.map((category, index) => {
-                                return <button key={index} onClick={()=>handleFilter(category)} className={`rounded-full ${activeCategory === category ? `bg-[#9538e2]` : `bg-[#f7f7f7]`} text-lg text-gray-500 font-bold w-52 py-3 active:scale-95 transition transform duration-100`}>{category}</button>;
+                                return <button key={index} onClick={()=>handleFilter(category)} className={`rounded-full ${activeCategory === category ? `bg-[#9538e2] text-white` : `bg-[#f7f7f7] text-gray-500`} text-lg font-bold w-52 py-3 active:scale-95 transition transform duration-100`}>{category}</button>;
                             })
                         }
                     </div>
