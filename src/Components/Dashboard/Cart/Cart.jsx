@@ -97,7 +97,7 @@ const Cart = () => {
                 </div>
             </div>
             {
-                cart_LS.map((gadget, index) => {
+                cart_LS?.map((gadget, index) => {
                     return <CartCard key={index} gadget={gadget}></CartCard>
                 })
             }
