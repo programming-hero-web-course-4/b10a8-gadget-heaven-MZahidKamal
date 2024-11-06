@@ -45,7 +45,9 @@ const get_cart_from_LS = (allGadgetsArray) => {
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 const empty_LS_cart = () => {
-    localStorage.setItem('gh_cart_ls', JSON.stringify([]));
+    if (localStorage.getItem('gh_cart_ls')) {
+        localStorage.setItem('gh_cart_ls', JSON.stringify([]));
+    }
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/
