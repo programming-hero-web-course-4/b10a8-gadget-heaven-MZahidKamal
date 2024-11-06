@@ -7,6 +7,7 @@ import CartContextAPI from "../../../../../Routes/ContextAPI/CartContextAPI.jsx"
 import WishlistContextAPI from "../../../../../Routes/ContextAPI/WishlistContextAPI.jsx";
 import {toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import ReactStars from "react-rating-stars-component";
 
 
 const Details = () => {
@@ -108,7 +109,8 @@ const Details = () => {
                     <div className={'col-span-8 rounded-xl flex flex-col justify-between items-start'}>
                         <h1 className={'text-3xl font-semibold'}>{title}</h1>
                         <h3 className={'text-xl font-semibold'}>Price: {price} €</h3>
-                        <div className={`border ${availability? 'border-green-500 bg-green-500/30':'border-red-500 bg-red-500/30'} rounded-full px-4 py-1`}>{availability? 'In Stock':'Out of Stock'}</div>
+                        <div
+                            className={`border ${availability ? 'border-green-500 bg-green-500/30' : 'border-red-500 bg-red-500/30'} rounded-full px-4 py-1`}>{availability ? 'In Stock' : 'Out of Stock'}</div>
                         <p className={'text-base text-gray-500'}>{description}</p>
                         <h3 className={'text-xl font-semibold'}>Specification:</h3>
                         <ol className={'list-decimal ml-5 text-base text-gray-500'}>
@@ -119,19 +121,32 @@ const Details = () => {
                             }
                         </ol>
                         <h3 className={'text-xl font-semibold'}>Rating:</h3>
-                        <p>⭐⭐⭐⭐⭐ <span className={'text-base text-gray-500 font-semibold bg-gray-500/10 ml-2 px-4 py-1 rounded-full'}>{rating}</span></p>
+                        <div className={'flex justify-center items-center'}>
+                            <ReactStars
+                                count={5}
+                                size={24}
+                                value={rating}
+                                isHalf={true}
+                                edit={false}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fa fa-star"></i>}
+                                activeColor="#ffd700"
+                            />
+                            <span className={'text-base text-gray-500 font-semibold bg-gray-500/10 ml-2 px-4 py-1 rounded-full'}>{rating}</span>
+                        </div>
                         <div className={'flex justify-center items-center gap-x-4'}>
                             <button
-                                onClick={()=>handleAddToCart()}
+                                onClick={() => handleAddToCart()}
                                 disabled={disableAddToCartButton}
-                                className={`flex justify-center items-center gap-x-2 bg-purple-500 px-6 py-2 rounded-full ${disableAddToCartButton? 'cursor-not-allowed' : 'active:scale-95 transition transform duration-100'}`}>
+                                className={`flex justify-center items-center gap-x-2 bg-purple-500 px-6 py-2 rounded-full ${disableAddToCartButton ? 'cursor-not-allowed' : 'active:scale-95 transition transform duration-100'}`}>
                                 <h3 className={'text-lg text-white font-semibold'}>Add To Cart</h3>
                                 <BsCart3 className={'text-2xl text-white'}/>
                             </button>
                             <button
-                                  onClick={()=>handleAddToWishlist()}
-                                  disabled={disableAddToWishlistButton}
-                                  className={`text-3xl w-12 h-12 border-2 bg-white rounded-full flex justify-center items-center ${disableAddToWishlistButton? 'cursor-not-allowed' : 'active:scale-95 transition transform duration-100'}`}>
+                                onClick={() => handleAddToWishlist()}
+                                disabled={disableAddToWishlistButton}
+                                className={`text-3xl w-12 h-12 border-2 bg-white rounded-full flex justify-center items-center ${disableAddToWishlistButton ? 'cursor-not-allowed' : 'active:scale-95 transition transform duration-100'}`}>
                                 <IoMdHeartEmpty/>
                             </button>
                         </div>
