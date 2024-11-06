@@ -1,7 +1,19 @@
 // import WishlistCard from "../Dashboard/Wishlist/WishlistCard/WishlistCard.jsx";
+import {useEffect} from "react";
+import {useLocation} from "react-router-dom";
 
 
 const Statistics = () => {
+
+
+    const currentUrl = useLocation().pathname;
+    useEffect(() => {
+        if(currentUrl.includes('statistics')){
+            document.title = 'Gadget Heaven | Statistics';
+        }
+    }, [currentUrl]);
+
+
     return (
         <div className={'bg-[#f7f7f7] max-h-fit pb-60'}>
             <div className="bg-[#9538e2]">

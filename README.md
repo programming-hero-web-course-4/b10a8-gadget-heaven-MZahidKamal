@@ -2,7 +2,7 @@
 Welcome to **GadgetHeaven**! This is a responsive e-commerce platform designed for gadget enthusiasts. The website allows users to explore a variety of gadgets, manage their shopping cart and wishlist, and make purchases—all while enjoying a seamless user experience. From the latest smartphones to cutting-edge accessories, GadgetHeaven is your go-to destination for tech shopping.
 
 ## 📄 Requirement Document Link
-You can find the detailed project requirements [here](#).
+You can find the detailed project requirements [here](https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08-.pdf).
 
 ## 🛠️ Technologies Used
 - **React.js**: Front-end framework for building a dynamic and responsive user interface.

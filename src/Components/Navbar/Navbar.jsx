@@ -64,8 +64,7 @@ const Navbar = () => {
                 className={`container mx-auto flex justify-between items-center ${currentUrl === '/' ? 'py-14 absolute top-0 left-0 right-0 z-10' : 'py-6'}`}>
 
                 <div className="left-logo">
-                    <Link to={'/'} className={`text-3xl ${currentUrl === '/' ? 'text-white' : 'text-black'} font-bold`}>Gadget
-                        Heaven</Link>
+                    <Link to={'/'} className={`text-3xl ${currentUrl === '/' ? 'text-white' : 'text-black'} font-bold`}>Gadget Heaven</Link>
                 </div>
 
                 <div className="middle-menu">

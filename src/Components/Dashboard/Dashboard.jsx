@@ -1,11 +1,21 @@
 import {Link, useLocation} from "react-router-dom";
 import Cart from "./Cart/Cart.jsx";
 import Wishlist from "./Wishlist/Wishlist.jsx";
+import {useEffect} from "react";
 
 
 const Dashboard = () => {
 
+
     const currentUrl = useLocation().pathname;
+
+
+    useEffect(() => {
+        if(currentUrl.includes('dashboard')){
+            document.title = 'Gadget Heaven | Dashboard';
+        }
+    }, [currentUrl]);
+
 
     return (
         <div className={'bg-[#f7f7f7] max-h-fit pb-60'}>

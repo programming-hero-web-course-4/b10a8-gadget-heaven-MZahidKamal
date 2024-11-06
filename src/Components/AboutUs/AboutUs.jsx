@@ -1,7 +1,18 @@
+import {useLocation} from "react-router-dom";
+import {useEffect} from "react";
+
 const AboutUs = () => {
+
+
+    const currentUrl = useLocation().pathname;
+    useEffect(() => {
+        if(currentUrl.includes('about_us')){
+            document.title = 'Gadget Heaven | About Us';
+        }
+    }, [currentUrl]);
+
+
     return (
-
-
         <div className={'bg-[#f7f7f7] max-h-fit pb-60'}>
             <div className="bg-[#9538e2]">
                 <div
