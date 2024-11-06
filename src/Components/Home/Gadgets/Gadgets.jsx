@@ -9,15 +9,11 @@ import {Link, useLoaderData, useLocation, useParams} from "react-router-dom";
 const Gadgets = () => {
 
 
-    let gadgets = useContext(GadgetsContextAPI);
-    let filteredGadgets = useLoaderData();
-
-
-    const [displayGadgets, setDisplayGadgets] = useState([]);
-
-
     const currentURL = useLocation().pathname;
     const searchParameter = useParams().category;
+    let gadgets = useContext(GadgetsContextAPI);
+    let filteredGadgets = useLoaderData();
+    const [displayGadgets, setDisplayGadgets] = useState([]);
 
 
     useEffect(() => {
@@ -27,7 +23,6 @@ const Gadgets = () => {
         else {
             setDisplayGadgets(filteredGadgets);
         }
-
     }, [currentURL, gadgets, filteredGadgets]);
 
 

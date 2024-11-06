@@ -11,11 +11,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Root = () => {
 
+
     const gadgets = useLoaderData();
     // console.log(gadgets);
 
+
     const [cart, setCart] = useState([]);
     const [wishlist, setWishlist] = useState([]);
+
 
     return (
         <>
@@ -45,5 +48,6 @@ const Root = () => {
         </>
     );
 };
+
 
 export default Root;

@@ -4,7 +4,9 @@ import WishlistContextAPI from "../../../Routes/ContextAPI/WishlistContextAPI.js
 
 const Wishlist = () => {
 
+
     const [wishlist] = useContext(WishlistContextAPI);
+
 
     return (
         <div className={'container mx-auto px-10'}>
@@ -16,7 +18,6 @@ const Wishlist = () => {
                     return <WishlistCard key={index} gadget={gadget}></WishlistCard>
                 })
             }
-            {/*<WishlistCard></WishlistCard>*/}
         </div>
     );
 };

@@ -2,6 +2,7 @@ import PropType from "prop-types";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import {useContext} from "react";
 import CartContextAPI from "../../../../Routes/ContextAPI/CartContextAPI.jsx";
+import {remove_from_LS_cart} from "../../../../SharedUtilities/SharedUtilities.jsx";
 
 
 const CartCard = ({gadget}) => {
@@ -27,6 +28,7 @@ const CartCard = ({gadget}) => {
     const handleRemoveFromCart = () => {
         let newCart = cart.filter((item) => item !== gadget);
         setCart(newCart);
+        remove_from_LS_cart(gadget);
     }
 
 

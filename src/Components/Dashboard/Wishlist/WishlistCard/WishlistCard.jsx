@@ -5,6 +5,7 @@ import WishlistContextAPI from "../../../../Routes/ContextAPI/WishlistContextAPI
 import CartContextAPI from "../../../../Routes/ContextAPI/CartContextAPI.jsx";
 import {toast} from "react-toastify";
 import {BsCart3} from "react-icons/bs";
+import {add_to_LS_cart} from "../../../../SharedUtilities/SharedUtilities.jsx";
 
 
 const WishlistCard = ({gadget}) => {
@@ -40,10 +41,12 @@ const WishlistCard = ({gadget}) => {
             let newWishlist = wishlist.filter((item) => item !== gadget);
             setWishlist(newWishlist);
             setCart([...cart, gadget]);
+            add_to_LS_cart(gadget);
             toast.success(`${title} is moved to cart successfully!`);
         }
         else {
             setCart([...cart, gadget]);
+            add_to_LS_cart(gadget);
             toast.success(`${title} added to cart successfully!`);
         }
     }

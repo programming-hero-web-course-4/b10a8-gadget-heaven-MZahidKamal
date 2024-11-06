@@ -8,6 +8,12 @@ import WishlistContextAPI from "../../../../../Routes/ContextAPI/WishlistContext
 import {toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import ReactStars from "react-rating-stars-component";
+import {
+    add_to_LS_cart,
+    get_cart_from_LS,
+    remove_from_LS_cart
+} from "../../../../../SharedUtilities/SharedUtilities.jsx";
+import GadgetsContextAPI from "../../../../../Routes/ContextAPI/GadgetsContextAPI.jsx";
 
 
 const Details = () => {
@@ -30,19 +36,25 @@ const Details = () => {
     } = gadget;
 
 
+    let gadgets = useContext(GadgetsContextAPI);
     const [cart, setCart] = useContext(CartContextAPI);
     const [wishlist, setWishlist] = useContext(WishlistContextAPI);
 
+    const [cart_LS, setCart_LS] = useState([]);
+    useEffect(() => {
+        const cart_from_LS = get_cart_from_LS(gadgets);
+        setCart_LS(cart_from_LS);
+    }, [gadgets, cart]);
 
     const [disableAddToCartButton, setDisableAddToCartButton] = useState(false);
     const [disableAddToWishlistButton, setDisableAddToWishlistButton] = useState(false);
 
 
     useEffect(() => {
-        if(cart.includes(gadget)){
+        if(cart.includes(gadget)  ||  cart_LS.includes(gadget)){
             setDisableAddToCartButton(true);
         }
-    }, [gadget, cart, wishlist]);
+    }, [gadget, cart, wishlist, cart_LS]);
 
 
     useEffect(() => {
@@ -53,7 +65,8 @@ const Details = () => {
 
 
     const handleAddToCart = () => {
-        if (cart.includes(gadget)) {
+        if (cart.includes(gadget)  || cart_LS.includes(gadget)) {
+            setDisableAddToCartButton(true);
             toast.info(`${title} is already in your cart!`);
         }
         else if (wishlist.includes(gadget)) {
@@ -61,10 +74,12 @@ const Details = () => {
             setWishlist(newWishlist);
             setDisableAddToWishlistButton(false);
             setCart([...cart, gadget]);
+            add_to_LS_cart(gadget);
             toast.success(`${title} is moved to cart successfully!`);
         }
         else {
             setCart([...cart, gadget]);
+            add_to_LS_cart(gadget);
             toast.success(`${title} added to cart successfully!`);
         }
     }
@@ -72,9 +87,10 @@ const Details = () => {
 
     const handleAddToWishlist = () => {
 
-        if (cart.includes(gadget)) {
+        if (cart.includes(gadget) || cart_LS.includes(gadget)) {
             let newCart = cart.filter((item) => item !== gadget);
             setCart(newCart);
+            remove_from_LS_cart(gadget);
             setDisableAddToCartButton(false);
             setWishlist([...wishlist, gadget]);
             toast.success(`${title} is moved to wishlist successfully!`);

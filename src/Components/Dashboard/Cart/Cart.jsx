@@ -4,30 +4,42 @@ import { HiOutlineAdjustmentsVertical } from "react-icons/hi2";
 import {useContext, useEffect, useState} from "react";
 import CartContextAPI from "../../../Routes/ContextAPI/CartContextAPI.jsx";
 import {toast} from "react-toastify";
+import GadgetsContextAPI from "../../../Routes/ContextAPI/GadgetsContextAPI.jsx";
+import {empty_LS_cart, get_cart_from_LS} from "../../../SharedUtilities/SharedUtilities.jsx";
 
 
 const Cart = () => {
 
-
+    let gadgets = useContext(GadgetsContextAPI);
     const [cart, setCart] = useContext(CartContextAPI);
+    const [cart_LS, setCart_LS] = useState([]);
+
     const [cartPrice, setCartPrice] = useState(0);
+
     const [disablePurchaseButton, setDisablePurchaseButton] = useState(false);
 
 
     useEffect(() => {
-        const total_price = cart.reduce((acc, gadget) => acc + gadget.price, 0);
+        const total_price = cart_LS.reduce((acc, gadget) => acc + gadget.price, 0);
         setCartPrice(total_price);
-    }, [cart]);
+    }, [cart_LS, cart]);
+
+
+    useEffect(() => {
+        const cart_from_LS = get_cart_from_LS(gadgets);
+        setCart_LS(cart_from_LS);
+    }, [gadgets]);
 
 
     const handleSortByPrice = () => {
 
-        if(cart.length > 0){
-            let previousCart = [...cart];
+        if(cart_LS.length > 0){
+            let previousCart = [...cart_LS];
             let sortedCart = previousCart.sort((a, b) => b.price - a.price);
 
-            if(JSON.stringify(sortedCart) !== JSON.stringify(cart)){
+            if(JSON.stringify(sortedCart) !== JSON.stringify(cart_LS)){
                 setCart(sortedCart);
+                setCart_LS(sortedCart);
                 toast.success('Sorted by price successfully!');
             }
             else{
@@ -46,19 +58,20 @@ const Cart = () => {
         setTimeout(() => {
             document.getElementById('modal_close').click();
             setCart([]);
+            empty_LS_cart();
         }, 2000);
     }
     //document.getElementById('purchase_confirmation_modal').showModal();
 
 
     useEffect(() => {
-        if(cart.length > 0){
+        if(cart.length > 0 || cart_LS.length > 0){
             setDisablePurchaseButton(false);
         }
         else {
             setDisablePurchaseButton(true);
         }
-    }, [cart]);
+    }, [cart, cart_LS]);
 
 
 
@@ -84,7 +97,7 @@ const Cart = () => {
                 </div>
             </div>
             {
-                cart.map((gadget, index) => {
+                cart_LS.map((gadget, index) => {
                     return <CartCard key={index} gadget={gadget}></CartCard>
                 })
             }
