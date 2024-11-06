@@ -11,6 +11,7 @@ import Cart from "./Components/Dashboard/Cart/Cart.jsx";
 import Wishlist from "./Components/Dashboard/Wishlist/Wishlist.jsx";
 import Details from "./Components/Home/Gadgets/Gadget/Details/Details.jsx";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
+// import Gadgets from "./Components/Home/Gadgets/Gadgets.jsx";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,15 @@ const router = createBrowserRouter([
                     const response = await fetch('https://raw.githubusercontent.com/MZahidKamal/Electronics-Gadgets/refs/heads/main/electronics-gadgets.json');
                     return await response.json();
                 }*/
+            },
+            {
+                path: "/:category",
+                element: <Home></Home>,
+                loader: async ({params}) => {
+                    const response = await fetch(`https://raw.githubusercontent.com/MZahidKamal/Electronics-Gadgets/refs/heads/main/electronics-gadgets.json`);
+                    const data = await response.json();
+                    return data.filter((item) => item.category === params.category);
+                },
             },
             {
                 path: "/:category/:brand/:title/:id/product_details",
